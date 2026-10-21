@@ -13,15 +13,15 @@
 - [x] README 覆盖边界、启动、API、投递语义、故障矩阵、工程取舍、限制及演进。
 - [x] 两个真实进程的启动与 API 重启持久化核验，无供应商网络访问。
 
-## 仍需完成
+## 归档与提交状态
 
 - [x] 根据用户明确要求，从本次 Codex 会话的本地真实事件记录导出根目录 `ai_conversations.zip`，包括 Markdown、逐条 JSONL 和来源校验信息。仅提取用户消息与助手可见回复，不生成虚构记录。
 - [x] ZIP 包含规格审查、分阶段实现、验收与 URL 修复期间的真实交互。导出截止时间见 ZIP 内 manifest.json；本轮最终确认及更晚消息未包含。已验证 ZIP 完整性及消息与来源逐条一致。
 - [x] 已创建私有 GitHub 仓库 https://github.com/Fangzhou26/rc_sophia 。
-- [ ] 向仓库提交源码、测试、文档和上述 ZIP。
-- [ ] 从远端重新克隆检查：仓库中确实包含 ZIP，安装依赖后可运行测试。
+- [x] 向私有仓库 main 分支提交源码、测试、文档和上述 ZIP；源码提交为 b7a3016。
+- [x] 从远端重新克隆，逐文件比对上传内容，验证 ZIP 完整性及会话 JSONL 的 SHA256。使用已有 Python 3.10 项目环境执行完整测试，92 passed、0 failed、1 warning，耗时 5.69 秒。本次复核复用已安装依赖，未重新安装。
 
-本工作区 `.git` 为空且只读，`git rev-parse --show-toplevel` 返回“not a git repository”，本地无 Git 远端配置。当前远端仓库已创建，本地 ZIP 已导出，代码及 ZIP 尚未推送。
+原工作区 `.git` 为空且受保护，上传通过独立临时检出完成；远端为 https://github.com/Fangzhou26/rc_sophia ，代码及 ZIP 已推送。仓库当前为私有，如评审需要访问，需按作业要求授予权限或调整可见性。
 
 ## 建议提交内容
 
@@ -54,4 +54,4 @@ git remote add origin https://github.com/<your-account>/rc_sophia.git
 git push -u origin main
 ```
 
-以上是待用户执行的提交指引，不表示已经执行。GitHub 仓库应先创建为空仓库，访问权限由用户按作业要求选择；当前准备不包含发布授权或仓库可见性的推断。
+以上保留为其他环境的提交参考；本项目已由用户授权完成上传，无需重复初始化或推送首个提交。
